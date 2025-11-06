@@ -13,7 +13,7 @@
         &kp ESC      &kp Q      &kp W      &kp E      &kp R      &kp T              &kp Y      &kp U      &kp I       &kp O       &kp P        &kp BACKSPACE
         &kp TAB      &kp A      &kp S      &kp D      &kp F      &kp G              &kp H      &kp J      &kp K       &kp L       &td_pc       &td_comi
         &td_caplock  &kp Z      &kp X      &kp C      &kp V      &kp B              &kp N      &kp M      &td_comm    &td_dot     &td_sla      &kp DEL
-                                &kp LCTL   &ht160 LGUI HOME      &lt &lower_layer SPACE   &lt &raise_layer ENTER   &lt &vscode_layer END   &td_alt
+                                &kp LCTL   &ht160 &kp LGUI &kp HOME   &lt &lower_layer SPACE   &lt &raise_layer ENTER   &lt &vscode_layer END   &td_alt
       >;
     };
 
