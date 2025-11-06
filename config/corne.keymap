@@ -1,12 +1,12 @@
-/* Layer indices used across the keymap */
-#define QWERTY 0
-#define LOWER  1
-#define RAISE  2
-#define VSCODE 3
-#define ADJUST 4
+/* Layer indices used across the keymap (avoid clashing with node names) */
+#define L_QWERTY 0
+#define L_LOWER  1
+#define L_RAISE  2
+#define L_VSCODE 3
+#define L_ADJUST 4
 
 /* Macro helpers for multi-cell bindings */
-#define QWERTY_HOME &to QWERTY &kp HOME
+#define QWERTY_HOME &to L_QWERTY &kp HOME
 
 / {
   keymap {
@@ -19,8 +19,8 @@
     conditional_layers {
       compatible = "zmk,conditional-layers";
       tri_lower_raise_adjust {
-        if-layers = <LOWER RAISE>;
-        then-layer = <ADJUST>;
+  if-layers = <L_LOWER L_RAISE>;
+  then-layer = <L_ADJUST>;
       };
     }
 
@@ -29,7 +29,7 @@
         &kp ESC   &kp Q   &kp W   &kp E   &kp R    &kp T           &kp Y   &kp U   &kp I     &kp O     &kp P       &kp BSPC
         &kp TAB   &kp A   &kp S   &kp D   &kp F    &kp G           &kp H   &kp J   &kp K     &kp L     &td_pc      &td_comi
         &td_caplock &kp Z &kp X   &kp C   &kp V    &kp B           &kp N   &kp M   &td_comm  &td_dot   &td_sla     &kp DEL
-                            &kp LCTL  &ht160 QWERTY_HOME  &lt LOWER SPACE   &lt RAISE ENTER   &lt VSCODE END  &td_alt
+                            &kp LCTL  &ht160 QWERTY_HOME  &lt L_LOWER SPACE   &lt L_RAISE ENTER   &lt L_VSCODE END  &td_alt
       >;
     };
 
