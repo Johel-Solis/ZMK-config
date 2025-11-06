@@ -1,3 +1,8 @@
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include "behaviors.dtsi"
+#include "vscode_macros.dtsi"
 / {
   keymap {
     compatible = "zmk,keymap";
