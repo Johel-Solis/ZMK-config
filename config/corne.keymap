@@ -13,7 +13,8 @@
         &kp ESC      &kp Q      &kp W      &kp E      &kp R      &kp T              &kp Y      &kp U      &kp I       &kp O       &kp P        &kp BACKSPACE
         &kp TAB      &kp A      &kp S      &kp D      &kp F      &kp G              &kp H      &kp J      &kp K       &kp L       &td_pc       &td_comi
         &td_caplock  &kp Z      &kp X      &kp C      &kp V      &kp B              &kp N      &kp M      &td_comm    &td_dot     &td_sla      &kp DEL
-                                &kp LCTL  &mt LGUI HOME   &lt 1 SPACE  &lt 2 ENTER  &lt 3 END  &td_alt
+                                &kp LCTL    &mt LGUI HOME    &lt 1 SPACE    &lt 2 ENTER    &lt 3 END    &td_alt
+
 
 
       >;
@@ -46,7 +47,7 @@
                     &trans        &vs_mlinedown   &vs_dline &vs_slctline   &vs_sallwd    &vs_pdefinition
 
         &trans      &vs_undo      &vs_cut         &vs_copy  &vs_paste      &trans
-                    &vs_new       &vs_sproblems   &td_zoom  &vs_qfix       &vs_tgcomment &kp LCA(DEL)
+                    &vs_new       &vs_sproblems   &td_zoom  &vs_qfix       &vs_tgcomment &kp LC(LA(DEL))
                               &trans &trans &trans  &trans  &trans &trans
       >;
     };
