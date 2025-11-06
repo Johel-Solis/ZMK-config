@@ -65,12 +65,4 @@
     };
   };
 
-  /* ---------- Tri-layer: LOWER + RAISE => ADJUST ---------- */
-  conditional_layers {
-    compatible = "zmk,conditional-layers";
-    tri {
-      if-layers = <1 2>;
-      then-layer = <4>;
-    };
-  };
 };
