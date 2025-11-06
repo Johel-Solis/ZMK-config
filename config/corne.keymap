@@ -62,6 +62,7 @@
                                 &trans  &trans  &trans   &trans   &trans  &trans
       >;
     };
+  };
 
      /* ---------- Tri-layer: LOWER + RAISE => ADJUST ---------- */
     conditional_layers {
@@ -72,4 +73,4 @@
       };
     };
   };
-};
+
