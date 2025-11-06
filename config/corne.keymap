@@ -19,10 +19,10 @@
     conditional_layers {
       compatible = "zmk,conditional-layers";
       tri_lower_raise_adjust {
-  if-layers = <L_LOWER L_RAISE>;
-  then-layer = <L_ADJUST>;
+        if-layers = <L_LOWER L_RAISE>;
+        then-layer = <L_ADJUST>;
       };
-    }
+    };
 
     QWERTY {
       bindings = <
