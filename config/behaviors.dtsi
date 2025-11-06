@@ -1,6 +1,7 @@
 / {
   behaviors {
-    /* Hold-Tap behaviors approximating QMK tapping config */
+
+    /* Hold-Tap behaviors similares a QMK */
     ht160: hold_tap_160 {
       compatible = "zmk,behavior-hold-tap";
       label = "HT160";
@@ -8,7 +9,6 @@
       tapping-term-ms = <160>;
       flavor = "tap-preferred";
       quick-tap-ms = <175>;
-      /* quita: hold-trigger-on-release; retro-tap; */
     };
 
     ht200: hold_tap_200 {
@@ -18,24 +18,23 @@
       tapping-term-ms = <200>;
       flavor = "tap-preferred";
       quick-tap-ms = <175>;
-      /* quita: hold-trigger-on-release; */
     };
 
-    /* Tap-dance translations */
-    td_pc:    tap_dance_pc   { compatible = "zmk,behavior-tap-dance"; label = "TD_PC";    #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp SEMI  &kp COLON>; };
-    td_comi:  tap_dance_comi { compatible = "zmk,behavior-tap-dance"; label = "TD_COMI";  #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp QUOTE &kp DQT>; };
-    td_sla:   tap_dance_sla  { compatible = "zmk,behavior-tap-dance"; label = "TD_SLA";   #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp SLASH &kp QUESTION>; };
-    td_caplock: tap_dance_cap{ compatible = "zmk,behavior-tap-dance"; label = "TD_CAPLOCK";#binding-cells=<0>; tapping-term-ms=<200>; bindings=<&kp LSFT &kp CAPS>; };
-    td_alt:   tap_dance_alt  { compatible = "zmk,behavior-tap-dance"; label = "TD_ALT";   #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp LALT  &kp RALT>; };
-    td_dot:   tap_dance_dot  { compatible = "zmk,behavior-tap-dance"; label = "TD_DOT";   #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp DOT   &kp GT>; };
-    td_comm:  tap_dance_comm { compatible = "zmk,behavior-tap-dance"; label = "TD_COMM";  #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp COMMA &kp LT>; };
-    td_grv:   tap_dance_grv  { compatible = "zmk,behavior-tap-dance"; label = "TD_GRV";   #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp GRAVE &kp TILDE>; };
-    td_mins:  tap_dance_mins { compatible = "zmk,behavior-tap-dance"; label = "TD_MINS";  #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp MINUS &kp UNDERSCORE>; };
-    td_eql:   tap_dance_eql  { compatible = "zmk,behavior-tap-dance"; label = "TD_EQL";   #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp EQUAL &kp PLUS>; };
+    /* Tap-dance base */
+    td_pc:      tap_dance_pc   { compatible = "zmk,behavior-tap-dance"; label = "TD_PC";      #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp SEMI        &kp LS(SEMI)>; };
+    td_comi:    tap_dance_comi { compatible = "zmk,behavior-tap-dance"; label = "TD_COMI";    #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp QUOTE       &kp LS(QUOTE)>; };
+    td_sla:     tap_dance_sla  { compatible = "zmk,behavior-tap-dance"; label = "TD_SLA";     #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp SLASH       &kp LS(SLASH)>; };
+    td_caplock: tap_dance_cap  { compatible = "zmk,behavior-tap-dance"; label = "TD_CAPLOCK"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp LSFT        &kp CAPSLOCK>; };
+    td_alt:     tap_dance_alt  { compatible = "zmk,behavior-tap-dance"; label = "TD_ALT";     #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp LALT        &kp RALT>; };
+    td_dot:     tap_dance_dot  { compatible = "zmk,behavior-tap-dance"; label = "TD_DOT";     #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp DOT         &kp LS(DOT)>; };
+    td_comm:    tap_dance_comm { compatible = "zmk,behavior-tap-dance"; label = "TD_COMM";    #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp COMMA       &kp LS(COMMA)>; };
+    td_grv:     tap_dance_grv  { compatible = "zmk,behavior-tap-dance"; label = "TD_GRV";     #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp GRAVE       &kp LS(GRAVE)>; };
+    td_mins:    tap_dance_mins { compatible = "zmk,behavior-tap-dance"; label = "TD_MINS";    #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp MINUS       &kp LS(MINUS)>; };
+    td_eql:     tap_dance_eql  { compatible = "zmk,behavior-tap-dance"; label = "TD_EQL";     #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp EQUAL       &kp LS(EQUAL)>; };
 
-    /* VS Code tap-dance pairs — sin includes aquí */
-    td_a:     tap_dance_a    { compatible = "zmk,behavior-tap-dance"; label = "TD_A";     #binding-cells = <0>; tapping-term-ms = <250>; bindings = <&vs_sel_all &vs_tblock>; };
-    td_o:     tap_dance_o    { compatible = "zmk,behavior-tap-dance"; label = "TD_O";     #binding-cells = <0>; tapping-term-ms = <250>; bindings = <&vs_open    &vs_symbols>; };
-    td_zoom:  tap_dance_zoom { compatible = "zmk,behavior-tap-dance"; label = "TD_ZOOM";  #binding-cells = <0>; tapping-term-ms = <250>; bindings = <&vs_zoom_in &vs_zoom_out>; };
+    /* Tap-dance para VS Code */
+    td_a:       tap_dance_a    { compatible = "zmk,behavior-tap-dance"; label = "TD_A";       #binding-cells = <0>; tapping-term-ms = <250>; bindings = <&vs_sel_all    &vs_tblock>; };
+    td_o:       tap_dance_o    { compatible = "zmk,behavior-tap-dance"; label = "TD_O";       #binding-cells = <0>; tapping-term-ms = <250>; bindings = <&vs_open       &vs_symbols>; };
+    td_zoom:    tap_dance_zoom { compatible = "zmk,behavior-tap-dance"; label = "TD_ZOOM";    #binding-cells = <0>; tapping-term-ms = <250>; bindings = <&vs_zoom_in    &vs_zoom_out>; };
   };
 };
