@@ -1,73 +1,68 @@
-/* Layer indices used across the keymap (avoid clashing with node names) */
-#define L_QWERTY 0
-#define L_LOWER  1
-#define L_RAISE  2
-#define L_VSCODE 3
-#define L_ADJUST 4
-
-/* Macro helpers for multi-cell bindings */
-
 / {
   keymap {
     compatible = "zmk,keymap";
 
-    /* Optional tri-layer if supported by your ZMK build:
-     * When LOWER + RAISE are active, ADJUST turns on.
-     * If your build fails, remove this block and use a momentary key for ADJUST.
-     */
+    /* ---------- Layers (con labels) ---------- */
+
+    qwerty_layer: QWERTY {
+      bindings = <
+        &kp ESC      &kp Q      &kp W      &kp E      &kp R      &kp T              &kp Y      &kp U      &kp I       &kp O       &kp P        &kp BSPC
+        &kp TAB      &kp A      &kp S      &kp D      &kp F      &kp G              &kp H      &kp J      &kp K       &kp L       &td_pc       &td_comi
+        &td_caplock  &kp Z      &kp X      &kp C      &kp V      &kp B              &kp N      &kp M      &td_comm    &td_dot     &td_sla      &kp DEL
+                                &kp LCTL   &ht160 LGUI HOME      &lt &lower_layer SPACE   &lt &raise_layer ENTER   &lt &vscode_layer END   &td_alt
+      >;
+    };
+
+    lower_layer: LOWER {
+      bindings = <
+        &trans   &kp N0   &kp N1   &kp N2   &kp N3   &td_mins          &kp INS     &kp PG_UP  &kp UP     &kp PG_DN   &kp PSCR    &trans
+        &trans   &kp SLASH &kp N4  &kp N5   &kp N6   &td_eql           &trans      &kp LEFT   &kp DOWN   &kp RIGHT   &trans      &kp LSG(S)
+        &trans   &kp ASTERISK &kp N7 &kp N8 &kp N9   &td_grv           &kp TILDE   &kp APP    &trans     &trans      &trans      &trans
+                                &trans &trans &trans  &trans  &trans &trans
+      >;
+    };
+
+    raise_layer: RAISE {
+      bindings = <
+        &trans  &kp EXCL   &kp AT     &kp HASH   &kp DOLLAR  &kp PERCENT     &kp CARET  &kp AMPS   &kp ASTERISK  &kp LPAR   &kp RPAR   &trans
+        &kp F1  &kp F2     &kp F3     &kp F4     &kp F5      &kp F6          &kp MINUS  &kp EQUAL  &kp LBKT      &kp RBKT   &kp PIPE   &kp F12
+        &trans  &kp F7     &kp F8     &kp F9     &kp F10     &kp F11         &kp UNDERSCORE &kp PLUS &kp LCBKT    &kp RCBKT  &kp BSLH   &kp GRAVE
+                          &trans  &trans  &trans   &trans   &trans  &trans
+      >;
+    };
+
+    vscode_layer: VSCODE {
+      bindings = <
+        &trans     &vs_close      &vs_t_findword  &trans    &vs_replace    &vs_indent
+                    &vs_redo      &vs_mlineup     &trans    &td_o          &vs_qopen     &vs_references
+
+        &vs_split   &td_a         &vs_save        &vs_fnext &vs_find       &vs_outdent
+                    &trans        &vs_mlinedown   &vs_dline &vs_slctline   &vs_sallwd    &vs_pdefinition
+
+        &trans      &vs_undo      &vs_cut         &vs_copy  &vs_paste      &trans
+                    &vs_new       &vs_sproblems   &td_zoom  &vs_qfix       &vs_tgcomment &kp LCA(DEL)
+                              &trans &trans &trans  &trans  &trans &trans
+      >;
+    };
+
+    adjust_layer: ADJUST {
+      bindings = <
+        &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4     &kp VOL_UP  &kp MUTE   &trans   &trans   &trans   &trans
+        &trans       &rgb_ug_hue_up  &rgb_ug_saturation_up  &rgb_ug_brightness_up  &rgb_ug_next_effect  &rgb_ug_breathe
+                      &kp VOL_DOWN   &bt BT_DISC            &trans                  &trans               &trans               &rgb_ug_toggle
+        &trans       &rgb_ug_hue_down  &rgb_ug_saturation_down  &rgb_ug_brightness_down  &rgb_ug_prev_effect  &trans
+                      &kp C_PREV       &kp C_PLAY_PAUSE         &kp C_NEXT               &trans               &trans               &trans
+                                &trans  &trans  &trans   &trans   &trans  &trans
+      >;
+    };
+
+    /* ---------- Tri-layer: LOWER + RAISE => ADJUST ---------- */
     conditional_layers {
       compatible = "zmk,conditional-layers";
-      tri_lower_raise_adjust {
-        if-layers = <L_LOWER L_RAISE>;
-        then-layer = <L_ADJUST>;
+      tri {
+        if-layers = <&lower_layer &raise_layer>;
+        then-layer = <&adjust_layer>;
       };
-    };
-
-    QWERTY {
-      bindings = <
-        &kp ESC   &kp Q   &kp W   &kp E   &kp R    &kp T           &kp Y   &kp U   &kp I     &kp O     &kp P       &kp BSPC
-        &kp TAB   &kp A   &kp S   &kp D   &kp F    &kp G           &kp H   &kp J   &kp K     &kp L     &td_pc      &td_comi
-        &td_caplock &kp Z &kp X   &kp C   &kp V    &kp B           &kp N   &kp M   &td_comm  &td_dot   &td_sla     &kp DEL
-                            &kp LCTL  &ht160 &kp LGUI &kp HOME  &lt L_LOWER SPACE   &lt L_RAISE ENTER   &lt L_VSCODE END  &td_alt
-      >;
-    };
-
-    LOWER {
-      bindings = <
-        &trans &kp N0 &kp N1 &kp N2 &kp N3 &td_mins      &kp INS   &kp PG_UP  &kp UP     &kp PG_DN  &kp PSCR  &trans
-        &trans &kp SLASH &kp N4 &kp N5 &kp N6 &td_eql    &trans    &kp LEFT   &kp DOWN   &kp RIGHT  &trans    &kp LSG(S)
-        &trans &kp ASTERISK &kp N7 &kp N8 &kp N9 &td_grv &kp TILDE &kp APP    &trans     &trans     &trans    &trans
-                          &trans &trans &trans  &trans  &trans &trans
-      >;
-    };
-
-    RAISE {
-      bindings = <
-        &trans  &kp EXCL &kp AT  &kp HASH &kp DOLLAR &kp PERCENT   &kp CARET &kp AMPS  &kp ASTERISK &kp LPAR  &kp RPAR  &trans
-        &kp F1  &kp F2   &kp F3  &kp F4   &kp F5     &kp F6        &kp MINUS &kp EQUAL &kp LBKT     &kp RBKT  &kp BSLH  &kp F12
-        &trans  &kp F7   &kp F8  &kp F9   &kp F10    &kp F11       &kp UNDERSCORE &kp PLUS &kp LCBKT &kp RCBKT &kp BSLH &kp GRAVE
-                         &trans &trans &trans &trans &trans &trans
-      >;
-    };
-
-    VSCODE {
-      bindings = <
-        &trans   &vs_close &vs_t_findword &trans  &vs_replace &vs_indent     &vs_redo  &vs_mlineup  &trans  &td_o     &vs_qopen     &vs_references
-        &vs_split &td_a    &vs_save       &vs_fnext &vs_find   &vs_outdent    &trans    &vs_mlinedown &vs_dline &vs_slctline &vs_sallwd &vs_pdefinition
-        &trans   &vs_undo  &vs_cut        &vs_copy  &vs_paste  &trans         &vs_new   &vs_sproblems &td_zoom  &vs_qfix  &vs_tgcomment  &kp LCA(DEL)
-                           &trans &trans &trans  &trans  &trans &trans
-      >;
-    };
-
-    ADJUST {
-      bindings = <
-        &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    &kp VOL_UP &kp MUTE &trans &trans &trans &trans
-        &trans &rgb_ug_hue_up &rgb_ug_saturation_up &rgb_ug_brightness_up &rgb_ug_next_effect &rgb_ug_breathe
-                &kp VOL_DOWN &trans &trans &trans &trans &rgb_ug_toggle
-        &trans &rgb_ug_hue_down &rgb_ug_saturation_down &rgb_ug_brightness_down &rgb_ug_prev_effect &trans
-                &kp C_PREV &kp C_PLAY_PAUSE &kp C_NEXT &trans &trans &trans
-                           &trans &trans &trans  &trans  &trans &trans
-      >;
-    };
+    }
   };
 };
