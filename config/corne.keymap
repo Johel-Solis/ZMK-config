@@ -40,14 +40,9 @@
 
     vscode_layer: VSCODE {
       bindings = <
-        &trans     &vs_close      &vs_t_findword  &trans    &vs_replace    &vs_indent
-                    &vs_redo      &vs_mlineup     &trans    &td_o          &vs_qopen     &vs_references
-
-        &vs_split   &td_a         &vs_save        &vs_fnext &vs_find       &vs_outdent
-                    &trans        &vs_mlinedown   &vs_dline &vs_slctline   &vs_sallwd    &vs_pdefinition
-
-        &trans      &vs_undo      &vs_cut         &vs_copy  &vs_paste      &trans
-                    &vs_new       &vs_sproblems   &td_zoom  &vs_qfix       &vs_tgcomment &kp LC(LA(DEL))
+        &trans  &vs_close  &vs_t_findword  &trans &vs_replace  &vs_indent       &vs_redo  &vs_mlineup  &trans  &td_o  &vs_qopen   &vs_references
+        &vs_split   &td_a   &vs_save  &vs_fnext &vs_find   &vs_outdent          &trans   &vs_mlinedown   &vs_dline &vs_slctline   &vs_sallwd    &vs_pdefinition
+        &trans    &vs_undo   &vs_cut   &vs_copy  &vs_paste    &trans            &vs_new   &vs_sproblems   &td_zoom  &vs_qfix      &vs_tgcomment &kp LC(LA(DEL))
                               &trans &trans &trans  &trans  &trans &trans
       >;
     };
