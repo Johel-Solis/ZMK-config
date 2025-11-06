@@ -1,3 +1,13 @@
+/* Layer indices used across the keymap */
+#define QWERTY 0
+#define LOWER  1
+#define RAISE  2
+#define VSCODE 3
+#define ADJUST 4
+
+/* Macro helpers for multi-cell bindings */
+#define QWERTY_HOME &to QWERTY &kp HOME
+
 / {
   keymap {
     compatible = "zmk,keymap";
