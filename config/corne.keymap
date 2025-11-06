@@ -23,8 +23,8 @@
     lower_layer: LOWER {
       bindings = <
         &trans   &kp N0   &kp N1   &kp N2   &kp N3   &td_mins          &kp INSERT  &kp PAGE_UP  &kp UP     &kp PAGE_DOWN  &kp PSCRN  &trans
-        &trans   &kp SLASH &kp N4  &kp N5   &kp N6   &td_eql           &trans      &kp LEFT     &kp DOWN   &kp RIGHT      &trans             &kp LG(LS(S))
-        &trans   &kp ASTERISK &kp N7 &kp N8 &kp N9   &td_grv           &kp TILDE &kp APPLICATION &trans  &trans   &trans             &trans
+        &trans   &kp SLASH &kp N4  &kp N5   &kp N6   &td_eql           &trans      &kp LEFT     &kp DOWN   &kp RIGHT      &trans   &kp LG(LS(S))
+        &trans   &kp ASTERISK &kp N7 &kp N8 &kp N9   &td_grv           &kp TILDE &kp K_APPLICATION &trans  &trans   &trans   &trans
                                 &trans &trans &trans  &trans  &trans &trans
       >;
     };
