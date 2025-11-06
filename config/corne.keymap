@@ -6,66 +6,69 @@
   keymap {
     compatible = "zmk,keymap";
 
-    /* ---------- QWERTY ---------- */
+    /* ---------- Layers (con labels) ---------- */
+
     qwerty_layer: QWERTY {
       bindings = <
         &kp ESC      &kp Q      &kp W      &kp E      &kp R      &kp T              &kp Y      &kp U      &kp I       &kp O       &kp P        &kp BACKSPACE
         &kp TAB      &kp A      &kp S      &kp D      &kp F      &kp G              &kp H      &kp J      &kp K       &kp L       &td_pc       &td_comi
         &td_caplock  &kp Z      &kp X      &kp C      &kp V      &kp B              &kp N      &kp M      &td_comm    &td_dot     &td_sla      &kp DEL
-                                &kp LCTL   &mt LGUI HOME   &lt 1 SPACE   &lt 2 ENTER   &lt 3 END   &td_alt
+                                &kp LCTL    &mt LGUI HOME    &lt 1 SPACE    &lt 2 ENTER    &lt 3 END    &td_alt
+
+
+
       >;
     };
 
-    /* ---------- LOWER ---------- */
     lower_layer: LOWER {
       bindings = <
-        &trans   &kp N0   &kp N1   &kp N2   &kp N3   &td_mins          &kp INSERT   &kp PAGE_UP   &kp UP      &kp PAGE_DOWN  &kp PSCRN  &trans
-        &trans   &kp SLASH &kp N4  &kp N5   &kp N6   &td_eql           &trans       &kp LEFT      &kp DOWN    &kp RIGHT      &trans     &kp LG(LS(S))
-        &trans   &kp ASTERISK &kp N7 &kp N8 &kp N9   &td_grv           &kp TILDE    &kp K_APPLICATION  &trans  &trans  &trans  &trans
+        &trans   &kp N0   &kp N1   &kp N2   &kp N3   &td_mins          &kp INSERT  &kp PAGE_UP  &kp UP     &kp PAGE_DOWN  &kp PSCRN  &trans
+        &trans   &kp SLASH &kp N4  &kp N5   &kp N6   &td_eql           &trans      &kp LEFT     &kp DOWN   &kp RIGHT      &trans   &kp LG(LS(S))
+        &trans   &kp ASTERISK &kp N7 &kp N8 &kp N9   &td_grv           &kp TILDE &kp K_APPLICATION &trans  &trans   &trans   &trans
                                 &trans &trans &trans  &trans  &trans &trans
       >;
     };
 
-    /* ---------- RAISE ---------- */
     raise_layer: RAISE {
       bindings = <
-        /* ! @ # $ %       ^  &  *   (   ) */
-        &trans  &kp LS(N1) &kp LS(N2) &kp LS(N3) &kp LS(N4) &kp LS(N5)     &kp LS(N6) &kp LS(N7) &kp LS(N8) &kp LS(N9) &kp LS(N0) &trans
-        &kp F1  &kp F2     &kp F3     &kp F4     &kp F5      &kp F6         &kp MINUS  &kp EQUAL  &kp LBKT    &kp RBKT    &kp PIPE   &kp F12
-        &trans  &kp F7     &kp F8     &kp F9     &kp F10     &kp F11        &kp LS(MINUS)  &kp LS(EQUAL)  &kp LS(LBKT)  &kp LS(RBKT)  &kp BSLH  &kp GRAVE
+        &trans  &kp EXCL   &kp AT     &kp HASH   &kp DOLLAR  &kp PERCENT     &kp CARET  &kp AMPS   &kp ASTERISK  &kp LPAR   &kp RPAR   &trans
+        &kp F1  &kp F2     &kp F3     &kp F4     &kp F5      &kp F6          &kp MINUS  &kp EQUAL  &kp LBKT     &kp RBKT   &kp PIPE  &kp F12
+        &trans  &kp F7     &kp F8     &kp F9     &kp F10     &kp F11         &kp LS(MINUS)  &kp LS(EQUAL)  &kp LS(LBKT)  &kp LS(RBKT)  &kp BSLH  &kp GRAVE
                           &trans  &trans  &trans   &trans   &trans  &trans
       >;
     };
 
-    /* ---------- VSCODE ---------- */
     vscode_layer: VSCODE {
-  bindings = <
-    &trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans  &trans
-    &trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans  &trans
-    &trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans  &trans
-                               &trans &trans &trans  &trans  &trans &trans
-  >;
-};
+      bindings = <
+        &trans     &vs_close      &vs_t_findword  &trans    &vs_replace    &vs_indent
+                    &vs_redo      &vs_mlineup     &trans    &td_o          &vs_qopen     &vs_references
 
-    /* ---------- ADJUST ---------- */
+        &vs_split   &td_a         &vs_save        &vs_fnext &vs_find       &vs_outdent
+                    &trans        &vs_mlinedown   &vs_dline &vs_slctline   &vs_sallwd    &vs_pdefinition
+
+        &trans      &vs_undo      &vs_cut         &vs_copy  &vs_paste      &trans
+                    &vs_new       &vs_sproblems   &td_zoom  &vs_qfix       &vs_tgcomment &kp LC(LA(DEL))
+                              &trans &trans &trans  &trans  &trans &trans
+      >;
+    };
+
     adjust_layer: ADJUST {
       bindings = <
-        &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4     &kp C_VOL_UP  &kp C_MUTE   &trans   &trans   &trans   &trans
-        &trans       &rgb_ug_hue_up  &rgb_ug_saturation_up  &rgb_ug_brightness_up  &rgb_ug_next_effect  &rgb_ug_breathe
-                      &kp C_VOL_DOWN   &bt BT_DISC          &trans                  &trans               &trans               &rgb_ug_toggle
-        &trans       &rgb_ug_hue_down  &rgb_ug_saturation_down  &rgb_ug_brightness_down  &rgb_ug_prev_effect  &trans
-                      &kp C_PREV       &kp C_PLAY_PAUSE         &kp C_NEXT               &trans               &trans               &trans
+        &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4     &kp C_VOL_UP  &kp C_MUTE   &trans   &trans   &trans   &trans
+        &trans   &rgb_ug_hue_up  &rgb_ug_saturation_up  &rgb_ug_brightness_up  &rgb_ug_next_effect  &rgb_ug_breathe      &kp C_VOL_DOWN   &bt BT_DISC   &trans   &trans   &trans    &rgb_ug_toggle
+        &trans   &rgb_ug_hue_down  &rgb_ug_saturation_down  &rgb_ug_brightness_down  &rgb_ug_prev_effect  &trans         &kp C_PREV       &kp C_PLAY_PAUSE   &kp C_NEXT   &trans    &trans               &trans
                                 &trans  &trans  &trans   &trans   &trans  &trans
       >;
     };
   };
 
-  /* ---------- Tri-layer: LOWER + RAISE => ADJUST ---------- */
-  conditional_layers {
-    compatible = "zmk,conditional-layers";
-    tri_layer {
-      if-layers = <1 2>;
-      then-layer = <4>;
+     /* ---------- Tri-layer: LOWER + RAISE => ADJUST ---------- */
+    conditional_layers {
+      compatible = "zmk,conditional-layers";
+      tri {
+        if-layers = <1 2>;
+        then-layer = <4>;
+      };
     };
   };
-};
+
