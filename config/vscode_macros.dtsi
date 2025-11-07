@@ -1,7 +1,7 @@
 / {
   behaviors {
     // ===== VS Code (Ctrl+) =====
-    vs_select_all: vs_sel_all { compatible = "zmk,behavior-macro"; label = "VS_SELECTALL"; #binding-cells = <0>; bindings = <&kp LC(A)>; };
+    vs_sel_all: vs_sel_all { compatible = "zmk,behavior-macro"; label = "VS_SELECTALL"; #binding-cells = <0>; bindings = <&kp LC(A)>; };
     vs_copy:       vs_copy    { compatible = "zmk,behavior-macro"; label = "VS_COPY";      #binding-cells = <0>; bindings = <&kp LC(C)>; };
     vs_fnext:      vs_fnext   { compatible = "zmk,behavior-macro"; label = "VS_FNEXT";     #binding-cells = <0>; bindings = <&kp LC(D)>; };
     vs_find:       vs_find    { compatible = "zmk,behavior-macro"; label = "VS_FIND";      #binding-cells = <0>; bindings = <&kp LC(F)>; };
