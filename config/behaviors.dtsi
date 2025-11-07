@@ -1,3 +1,6 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
 / {
   behaviors {
 
@@ -32,7 +35,7 @@
     td_mins:    tap_dance_mins { compatible = "zmk,behavior-tap-dance"; label = "TD_MINS";    #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp MINUS       &kp LS(MINUS)>; };
     td_eql:     tap_dance_eql  { compatible = "zmk,behavior-tap-dance"; label = "TD_EQL";     #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp EQUAL       &kp LS(EQUAL)>; };
 
-    /* Tap-dance para VS Code */
+    /* Tap-dance para VS Code (requiere que vs_* ya existan en otro .dtsi) */
     td_a:       tap_dance_a    { compatible = "zmk,behavior-tap-dance"; label = "TD_A";       #binding-cells = <0>; tapping-term-ms = <250>; bindings = <&vs_sel_all    &vs_tblock>; };
     td_o:       tap_dance_o    { compatible = "zmk,behavior-tap-dance"; label = "TD_O";       #binding-cells = <0>; tapping-term-ms = <250>; bindings = <&vs_open       &vs_symbols>; };
     td_zoom:    tap_dance_zoom { compatible = "zmk,behavior-tap-dance"; label = "TD_ZOOM";    #binding-cells = <0>; tapping-term-ms = <250>; bindings = <&vs_zoom_in    &vs_zoom_out>; };
