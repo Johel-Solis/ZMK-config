@@ -50,14 +50,13 @@
     };
 
     adjust_layer: ADJUST {
-  bindings = <
-    &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans   &trans    &trans     &trans  &trans  &trans
-    &trans      &trans        &trans        &trans        &trans        &trans          &trans   &bt BT_DISC  &trans  &trans  &trans  &trans
-    &trans      &trans        &trans        &trans        &trans        &trans          &trans     &trans     &trans  &trans  &trans  &trans 
-                                                    &trans  &trans  &trans              &trans   &trans  &trans
-  >;
-};
-
+      bindings = <
+        &bt BT_CLR  &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4           &trans     &trans       &trans     &trans   &trans   &trans
+        &trans   &rgb_ug RGB_HUI  &trans  &rgb_ug RGB_BRI   &trans    &trans                           &trans   &bt BT_DISC      &trans     &trans   &trans    &trans
+        &trans   &rgb_ug RGB_HUD  &trans  &rgb_ug RGB_BRD  &trans     &rgb_ug RGB_TOG                   &trans    &trans          &trans      &trans    &trans   &trans
+                                &trans  &trans  &trans   &trans   &trans  &trans
+      >;
+    };
   };
 
      /* ---------- Tri-layer: LOWER + RAISE => ADJUST ---------- */
