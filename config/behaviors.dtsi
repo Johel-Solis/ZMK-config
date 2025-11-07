@@ -25,7 +25,7 @@
 
     /* Tap-dance base */
     td_pc:      tap_dance_pc   { compatible = "zmk,behavior-tap-dance"; label = "TD_PC";      #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp SEMI        &kp LS(SEMI)>; };
-    td_comi:    tap_dance_comi { compatible = "zmk,behavior-tap-dance"; label = "TD_COMI";    #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp QUOTE       &kp LS(QUOTE)>; };
+    td_comi:    tap_dance_comi { compatible = "zmk,behavior-tap-dance"; label = "TD_COMI";    #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp SQT       &kp LS(SQT)>; };
     td_sla:     tap_dance_sla  { compatible = "zmk,behavior-tap-dance"; label = "TD_SLA";     #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp SLASH       &kp LS(SLASH)>; };
     td_caplock: tap_dance_cap  { compatible = "zmk,behavior-tap-dance"; label = "TD_CAPLOCK"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp LSHIFT      &kp CAPSLOCK>; };
     td_alt:     tap_dance_alt  { compatible = "zmk,behavior-tap-dance"; label = "TD_ALT";     #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp LALT        &kp RALT>; };
