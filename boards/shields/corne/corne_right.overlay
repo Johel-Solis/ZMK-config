@@ -29,3 +29,13 @@
         compatible = "zmk,battery-nrf-vddh";
     };
 };
+
+/ {
+    /* Tu led_strip ya definido… */
+
+    zmk,underglow {
+        compatible = "zmk,underglow";
+        strip = <&led_strip>;
+        pixel-count = <27>;
+    };
+};
