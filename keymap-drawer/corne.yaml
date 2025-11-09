@@ -1,0 +1,217 @@
+layout: {zmk_keyboard: corne}
+layers:
+  QWERTY:
+  - ESC
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - BACKSPACE
+  - TAB
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - '&td_pc'
+  - '&td_comi'
+  - '&td_caplock'
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - '&td_comm'
+  - '&td_dot'
+  - '&td_sla'
+  - DEL
+  - LCTL
+  - {t: HOME, h: LGUI}
+  - {t: SPACE, h: LOWER}
+  - {t: ENTER, h: RAISE}
+  - {t: END, h: VSCODE}
+  - '&td_alt'
+  LOWER:
+  - {t: ▽, type: trans}
+  - '0'
+  - '1'
+  - '2'
+  - '3'
+  - '&td_mins'
+  - INSERT
+  - PAGE UP
+  - UP
+  - PAGE DOWN
+  - PSCRN
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - /
+  - '4'
+  - '5'
+  - '6'
+  - '&td_eql'
+  - {t: ▽, type: trans}
+  - LEFT
+  - DOWN
+  - RIGHT
+  - {t: ▽, type: trans}
+  - Gui+Sft+S
+  - {t: ▽, type: trans}
+  - '*'
+  - '7'
+  - '8'
+  - '9'
+  - '&td_grv'
+  - '~'
+  - APPLICATION
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  RAISE:
+  - {t: ▽, type: trans}
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - '%'
+  - ^
+  - '&'
+  - '*'
+  - (
+  - )
+  - {t: ▽, type: trans}
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - '-'
+  - '='
+  - '['
+  - ']'
+  - '|'
+  - F12
+  - {t: ▽, type: trans}
+  - F7
+  - F8
+  - F9
+  - F10
+  - F11
+  - Sft+-
+  - Sft+=
+  - Sft+[
+  - Sft+]
+  - \
+  - '`'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  VSCODE:
+  - {t: ▽, type: trans}
+  - '&vs_close'
+  - '&vs_t_findword'
+  - {t: ▽, type: trans}
+  - '&vs_replace'
+  - '&vs_indent'
+  - '&vs_redo'
+  - '&vs_mlineup'
+  - {t: ▽, type: trans}
+  - '&td_o'
+  - '&vs_qopen'
+  - '&vs_references'
+  - '&vs_split'
+  - '&td_a'
+  - '&vs_save'
+  - '&vs_fnext'
+  - '&vs_find'
+  - '&vs_outdent'
+  - {t: ▽, type: trans}
+  - '&vs_mlinedown'
+  - '&vs_dline'
+  - '&vs_slctline'
+  - '&vs_sallwd'
+  - '&vs_pdefinition'
+  - {t: ▽, type: trans}
+  - '&vs_undo'
+  - '&vs_cut'
+  - '&vs_copy'
+  - '&vs_paste'
+  - {t: ▽, type: trans}
+  - '&vs_new'
+  - '&vs_sproblems'
+  - '&td_zoom'
+  - '&vs_qfix'
+  - '&vs_tgcomment'
+  - Ctl+Alt+DEL
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  ADJUST:
+  - BT CLR
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - {t: BT, h: '4'}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - RGB HUI
+  - {t: ▽, type: trans}
+  - RGB BRI
+  - RGB EFF
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - BT DISC
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - RGB HUD
+  - {t: ▽, type: trans}
+  - RGB BRD
+  - {t: ▽, type: trans}
+  - RGB TOG
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
