@@ -25,14 +25,27 @@
         compatible = "zmk,battery-nrf-vddh";
     };
 };
+&spi3 {
+    compatible = "nordic,nrf-spim";
+    status = "okay";
+    pinctrl-0 = <&spi3_default>;
+    pinctrl-1 = <&spi3_sleep>;
+    pinctrl-names = "default", "sleep";
 
-/ {
-    /* Tu led_strip ya definido… */
-
-    zmk,underglow {
-        compatible = "zmk,underglow";
-        strip = <&led_strip>;        /* ¡Apunta a tu nodo real! */
-        pixel-count = <27>;          /* 21 delante + 6 atrás = 27 por MITAD */
-        /* opcional: effect = "breathing";  speed = <3>;  */
+    led_strip: ws2812@0 {
+        compatible = "worldsemi,ws2812-spi";
+        label = "WS2812";
+        reg = <0>;
+        spi-max-frequency = <2400000>;
+        chain-length = <27>;   /* 21 frontales + 6 traseros */
+        spi-one-frame = <0x70>;
+        spi-zero-frame = <0x40>;
+        color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
     };
+};
+
+&zmk_underglow {
+    compatible = "zmk,underglow";
+    strip = <&led_strip>;
+    pixel-count = <27>;
 };
