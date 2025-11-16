@@ -6,7 +6,7 @@
 if BOARD_CORNEISH_ZEN_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "Corne-ish Zen"
+    default "Corne"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
@@ -48,10 +48,10 @@ endchoice
 
 if ZMK_DISPLAY
 
-config SPI
+onfig I2C
     default y
 
-config IL0323
+config SSD1306
     default y
 
 config ZMK_DISPLAY_BLANK_ON_IDLE
