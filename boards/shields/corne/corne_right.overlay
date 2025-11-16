@@ -1,15 +1,16 @@
-/*
- * Copyright (c) 2020 Pete Johanson
- *
- * SPDX-License-Identifier: MIT
- */
 
 #include "corne.dtsi"
 #include <dt-bindings/led/led.h>
 
 
-/ {
-kscan0: kscan {
+/{
+    chosen {
+        zephyr,display = &epd;
+        zmk,battery = &vbatt;
+        zmk,underglow = &led_strip;
+    };
+
+    kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
  wakeup-source;
         diode-direction = "col2row";
@@ -31,12 +32,6 @@ kscan0: kscan {
     };
 
 
-    chosen {
-        zephyr,display = &epd;
-        zmk,battery = &vbatt;
-        zmk,underglow = &led_strip;
-    };
-
     ext-power {
         compatible = "zmk,ext-power-generic";
         label = "EXT_POWER";
@@ -52,7 +47,11 @@ kscan0: kscan {
 
 
 &default_transform {
-	col-offset = <6>;
+    col-offset = <6>;
+};
+
+&five_column_transform {
+    col-offset = <6>;
 };
 
 &spi3 {
